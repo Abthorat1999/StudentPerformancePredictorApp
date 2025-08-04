@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <style>
+        body {
+            background-color: yellow;
+            font-family: Arial, sans-serif;
+        }
+
+        .Reg-Parent {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .Reg-Child {
+            text-align: center;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+
+        .Reg-Child input {
+            width: 80%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        .message {
+            color: red;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .success {
+            color: green;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 15px;
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <form action="/Regestion" method="post">
+        <div class="Reg-Parent">
+            <div class="Reg-Child">
+
+                <% if (message) { %>
+                    <div class="message <%= message.includes('success') ? 'success' : '' %>">
+                        <%= message %>
+                    </div>
+                <% } %>
+
+                <input type="text" name="FirstName" placeholder="Enter First Name" value="<%= oldData?.FirstName || '' %>" required><br>
+
+                <input type="text" name="LastName" placeholder="Enter Last Name" value="<%= oldData?.LastName || '' %>" required><br>
+
+                <input type="text" name="Contact" placeholder="Enter Contact Number" value="<%= oldData?.Contact || '' %>" required><br>
+
+                <input type="email" name="Email" placeholder="Enter Email" value="<%= oldData?.Email || '' %>" required><br>
+
+                <input type="password" name="Password" placeholder="Enter Password" required><br>
+                
+                <input type="password" name="ConfirmPassword" placeholder="Confirm Password" required><br>
+                
+                <input type="submit" value="Register" style="width: 40%;">
+                <br>
+                <a class="back-link" href="/">← Back to Login</a>
+
+            </div>
+        </div>
+    </form>
+</body>
+</html>

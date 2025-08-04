@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="/verify-code" method="post">
+    <h3>Verify Code & Set New Password</h3>
+    <input type="hidden" name="Email" value="<%= Email %>">
+    <input type="text" name="Code" placeholder="Enter Verification Code" required><br><br>
+    <input type="password" name="NewPassword" placeholder="New Password" required><br><br>
+    <input type="password" name="ConfirmPassword" placeholder="Confirm Password" required><br><br>
+    <input type="submit" value="Reset Password">
+    <p style="color: red;"><%= message %></p>
+</form>
+
+
+</body>
+</html>

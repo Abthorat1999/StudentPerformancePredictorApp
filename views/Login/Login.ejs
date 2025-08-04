@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        .Login-Child {
+            text-align: center;
+            margin: 150px;
+        }
+
+        .Login-Child>input {
+            width: 45%;
+            padding: 17px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        body {
+            background-color: yellow;
+        }
+
+        .message {
+            color: red;
+            font-weight: bold;
+        }
+
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/" method="post">
+        <div class="Login-Parent">
+            <div class="Login-Child">
+                <input type="email" name="Email" placeholder="Enter your Email" required>
+                <br><br>
+                <input type="password" name="Password" placeholder="Enter your Password" required>
+                <br><br>
+                <input type="submit" style="width: 18%; padding: 13px;">
+                
+                &nbsp; &nbsp;
+                <a href="./Regestion">Register</a>
+                <br><br>
+                <a href="/forgot-password">Forgot Password?</a>
+
+                
+            </div>
+        </div>
+    </form>
+
+    <% if (message) { %>
+        <p class="message">
+            <%= message %>
+        </p>
+    <% } %>
+</body>
+
+</html>
